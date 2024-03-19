@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import Logo from "../../../../public/home/logo.png";
 import Cart from "../../../../public/home/cart.svg";
 import Insta from "../../../../public/home/insta.svg";
@@ -9,7 +10,7 @@ import Twitter from "../../../../public/home/twitter.svg";
 const Header = () => {
   return (
     <div className="bg-blue text-white">
-      <div className="flex mx-12 md:mx-16 lg:mx-36 py-10 justify-between items-center xl:mx-64">
+      <div className="flex px-12 py-10 border-b-2 justify-between items-center xl:px-64 md:px-16 lg:px-36 md:border-b-0">
         <button className="border h-10 px-2 font-medium hidden lg:block">
           call-1234156
         </button>
@@ -23,28 +24,48 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className="hidden md:flex md:mx-16 lg:mx-36 pb-5 xl:mx-64 xl:gap-40 ">
+      <div className="hidden md:flex md:px-16 lg:px-36 py-2.5 xl:px-64 xl:gap-40 border-y-2">
         <div className="w-full xl:w-2/3">
           <ul className="flex justify-between">
-            <li>Homes</li>
-            <li>About</li>
-            <li>Menu</li>
-            <li>Reservation</li>
-            <li>Gallary</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link href="/reservation">Reservation</Link>
+            </li>
+            <li>
+              <Link href="/gallary">Gallary</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
         <div className="xl:w-1/3 items-end">
           <ul className="hidden ml-20 justify-between xl:flex">
             <li>
-              <Image src={Insta} />
+              <Link href="/">
+                <Image src={Insta} />
+              </Link>
             </li>
             <li>
-              <Image src={FB} />
+              <Link href="/">
+                <Image src={FB} />
+              </Link>
             </li>
             <li>
-              <Image src={Twitter} />
+              <Link href="/">
+                <Image src={Twitter} />
+              </Link>
             </li>
           </ul>
         </div>
