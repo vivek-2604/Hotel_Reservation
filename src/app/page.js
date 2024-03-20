@@ -16,7 +16,7 @@ import Icon2 from "../../public/home/icon2.png";
 import Icon3 from "../../public/home/icon3.png";
 import Blog1 from "../../public/home/blog1.svg";
 import Blog2 from "../../public/home/Blog2.svg";
-import Reservation from "./component/Reservation";
+import Reservation from "./component/ReservationForm";
 
 export default function Home() {
   return (
