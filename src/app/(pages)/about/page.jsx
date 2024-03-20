@@ -2,7 +2,7 @@ import Image from "next/image";
 import Category from "@/app/component/about-us/category";
 import Chef from "@/app/component/about-us/Chef Data";
 import Gallary from "@/app/component/about-us/Gallary";
-import Reservation from "@/app/component/Reservation";
+import Reservation from "@/app/component/ReservationForm";
 import Banner from "../../../../public/about-us/banner_img.svg";
 import Name from "../../../../public/about-us/name_sign.svg";
 import Testimonial from "@/app/component/Testimonial";

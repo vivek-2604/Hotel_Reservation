@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
-import Reservation from "@/app/component/Reservation";
+import Reservation from "@/app/component/ReservationForm";
 import Drink from "../../../../public/home/drink.svg";
 import MenuImg from "../../../../public/menu/menu.svg";
 import MenuBg1 from "../../../../public/menu/menu_img_1.svg";

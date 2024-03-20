@@ -1,4 +1,4 @@
-import Reservation from "@/app/component/Reservation";
+import Reservation from "@/app/component/ReservationForm";
 import Blog1 from "../../../../public/home/blog1.svg";
 import Blog2 from "../../../../public/home/blog2.svg";
 import Image from "next/image";

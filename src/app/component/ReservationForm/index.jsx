@@ -26,7 +26,7 @@ const Reservation = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="bg-blue opacity-95 py-36 px-28 lg:w-1/2 lg:mx-auto">
         <div className="flex flex-col justify-center items-center gap-5">
           <p className="border-y-2 border-yellow w-24 text-white text-sm font-semibold uppercase">
@@ -75,7 +75,7 @@ const Reservation = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
