@@ -21,6 +21,7 @@ module.exports = {
       'midnight_grey': '#343942',
       'metal_grey': '#555555',
       'yellow': '#E1B168',
+      'error_red':'#cc0000'
     },
   },
   plugins: [],

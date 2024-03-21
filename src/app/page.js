@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import "./globals.css";
 import Story from "../../public/home/story.svg";
@@ -16,13 +17,42 @@ import Icon2 from "../../public/home/icon2.png";
 import Icon3 from "../../public/home/icon3.png";
 import Blog1 from "../../public/home/blog1.svg";
 import Blog2 from "../../public/home/Blog2.svg";
+import HomeImg from "../../public/home/banner.svg";
 import Reservation from "./component/ReservationForm";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const getMenu = () => {
+    router.push("/menu");
+  };
+
   return (
-    <>
-      
-      <div className="mx-12 md:mx-16 lg:mx-36 xl:mx-64">
+    <div>
+      <div className="flex gap-6 px-12 text-white bg-blue md:px-16 lg:px-36 xl:px-64">
+        <div className="flex flex-col gap-6 py-20 w-full xl:w-1/2 pr-16 text-wrap">
+          <p className="text-3xl sm:text-5xl font-semibold">
+            Welcome to Restauranatate
+          </p>
+          <p className="text-lg font-normal">
+            Simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy .
+          </p>
+          <button className="w-full sm:w-1/3 border-2 border-yellow p-2" onClick={getMenu}>
+            View Menu
+          </button>
+        </div>
+        <div className="hidden before:rounded-t-full before:overflow-hidden before:w-[110%] before:absolute relative before:-top-[5%] before:-left-[5%] before:h-[96.5%] -mb-16 z-0 xl:block top-20">
+          <Image
+            alt=""
+            className="rounded-t-full overflow-hidden z-10 relative"
+            src={HomeImg}
+          />
+        </div>
+      </div>
+
+      <div className="mx-12 md:mx-16 lg:mx-36 xl:mx-64 mt-28">
         {/* locate */}
         <div className="grid grid-cols-1 text-center sm:grid-cols-2 xl:grid-cols-3">
           <div className="py-2 gap-4">
@@ -53,6 +83,7 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row my-14">
           <div className="xl:block w-full xl:w-1/3 xl:border-r-2 border-metal_grey xl:pr-20">
             <Image
+              alt=""
               className="xl:h-60 w-full xl:w-80"
               src={Story}
               width={100}
@@ -90,7 +121,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <div className="mx-12 md:mx-16 lg:mx-36 xl:mx-64">
         <div className="border-y-2 border-yellow w-14 text-center">MENU</div>
         <div className="flex flex-col gap-10 md:gap-20 md:flex-row">
@@ -103,12 +134,16 @@ export default function Home() {
               Venenatis lectus
             </p>
             <Image
+              alt=""
               src={Menu}
               width={300}
               height={500}
               className="mt-9 hidden md:block"
             />
-            <button className="border-2 border-yellow text-yellow text-sm py-2 px-5 mt-9">
+            <button
+              className="border-2 border-yellow text-yellow text-sm py-2 px-5 mt-9"
+              onClick={getMenu}
+            >
               See all dishes
             </button>
           </div>
@@ -116,7 +151,7 @@ export default function Home() {
             <p className="font-bold text-xl">Starter</p>
             <div className="mt-2">
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -130,7 +165,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -144,7 +179,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -158,7 +193,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -175,7 +210,7 @@ export default function Home() {
             <p className="font-bold text-xl mt-10">Main Dish</p>
             <div className="mt-2">
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -189,7 +224,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -203,7 +238,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -217,7 +252,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -234,7 +269,7 @@ export default function Home() {
             <p className="font-bold text-xl mt-10">Desert</p>
             <div className="mt-2">
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -248,7 +283,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-5 mt-5">
-                <Image src={Drink} width={50} height={5} />
+                <Image alt="" src={Drink} width={50} height={5} />
                 <div className="flex justify-between w-full">
                   <div>
                     <p className="text-lg font-semibold">
@@ -279,10 +314,15 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Image src={Testimonial} height={100} className="w-full h-[450px]" />
+          <Image
+            alt=""
+            src={Testimonial}
+            height={100}
+            className="w-full h-[450px]"
+          />
         </div>
       </div>
-    
+
       <div className="my-32 mx-12 md:mx-16 lg:mx-36 xl:mx-64">
         <div>
           <div className="flex flex-col items-center gap-4">
@@ -304,7 +344,7 @@ export default function Home() {
               style={{ backgroundImage: "url('/home/offer_bg-1.svg')" }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image src={OfferPrice1} width={100} height={100} />
+                <Image alt="" src={OfferPrice1} width={100} height={100} />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -318,7 +358,13 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-14">
-                <Image className="w-64" src={Burger} width={100} height={100} />
+                <Image
+                  alt=""
+                  className="w-64"
+                  src={Burger}
+                  width={100}
+                  height={100}
+                />
               </div>
             </div>
             <div
@@ -326,7 +372,7 @@ export default function Home() {
               style={{ backgroundImage: "url('/home/offer_bg-2.svg')" }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image src={OfferPrice2} width={100} height={100} />
+                <Image alt="" src={OfferPrice2} width={100} height={100} />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -358,7 +404,7 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-12 gap-5">
             <div>
               <div>
-                <Image src={Menu1} className="w-full"/>
+                <Image alt="" src={Menu1} className="w-full" />
               </div>
               <div>
                 <div className="text-lg font-bold flex justify-between">
@@ -372,7 +418,7 @@ export default function Home() {
             </div>
             <div>
               <div>
-                <Image src={Menu2} className="w-full"/>
+                <Image alt="" src={Menu2} className="w-full" />
               </div>
               <div>
                 <div className="text-lg font-bold flex justify-between">
@@ -386,7 +432,7 @@ export default function Home() {
             </div>
             <div>
               <div>
-                <Image src={Menu3} className="w-full"/>
+                <Image alt="" src={Menu3} className="w-full" />
               </div>
               <div>
                 <div className="text-lg font-bold flex justify-between">
@@ -400,7 +446,7 @@ export default function Home() {
             </div>
             <div>
               <div>
-                <Image src={Menu4} className="w-full"/>
+                <Image alt="" src={Menu4} className="w-full" />
               </div>
               <div>
                 <div className="text-lg font-bold flex justify-between">
@@ -414,7 +460,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center mt-10">
-            <button className="border-yellow border-2 px-4 py-2">
+            <button className="border-yellow border-2 px-4 py-2" onClick={getMenu}>
               See all dishes
             </button>
           </div>
@@ -438,16 +484,38 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 xl:w-2/3">
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
-              <Image src={Icon1} className="w-7 h-7" width={30} height={30} />
+              <Image
+                alt=""
+                src={Icon1}
+                className="w-7 h-7"
+                width={30}
+                height={30}
+              />
               <p className="text-white text-sm font-normal px-6">Opened 24/7</p>
             </div>
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
-              <Image src={Icon2} className="w-7 h-7" width={30} height={30} />
-              <p className="text-white text-sm font-normal px-6">Special Menu</p>
+              <Image
+                alt=""
+                src={Icon2}
+                className="w-7 h-7"
+                width={30}
+                height={30}
+              />
+              <p className="text-white text-sm font-normal px-6">
+                Special Menu
+              </p>
             </div>
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
-              <Image src={Icon3} className="w-7 h-7" width={30} height={30} />
-              <p className="text-white text-sm font-normal px-6">Home Delivery</p>
+              <Image
+                alt=""
+                src={Icon3}
+                className="w-7 h-7"
+                width={30}
+                height={30}
+              />
+              <p className="text-white text-sm font-normal px-6">
+                Home Delivery
+              </p>
             </div>
           </div>
         </div>
@@ -468,6 +536,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-10 mt-12">
             <div className="w-full border">
               <Image
+                alt=""
                 src={Blog1}
                 width={100}
                 height={100}
@@ -493,6 +562,7 @@ export default function Home() {
             </div>
             <div className="w-full border">
               <Image
+                alt=""
                 src={Blog2}
                 width={100}
                 height={100}
@@ -520,9 +590,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-4/5 py-28 bg-cover bg-center" style={{backgroundImage : "url('/home/Background.svg')"}}>
-      <Reservation />
+      <div
+        className="w-full h-4/5 py-28 bg-cover bg-center"
+        style={{ backgroundImage: "url('/home/Background.svg')" }}
+      >
+        <Reservation />
       </div>
-    </>
+    </div>
   );
 }
