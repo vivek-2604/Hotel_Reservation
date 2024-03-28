@@ -4,7 +4,7 @@ import "./globals.css";
 import Story from "../../public/home/story.svg";
 import Menu from "../../public/home/menu.svg";
 import Drink from "../../public/home/drink.svg";
-import Testimonial from "../../public/home/testimonial.png";
+import TestimonialImg from "../../public/home/testimonial.png";
 import OfferPrice1 from "../../public/home/offer_price_1.svg";
 import OfferPrice2 from "../../public/home/offer_price_2.svg";
 import Burger from "../../public/home/offer_1.svg";
@@ -19,9 +19,32 @@ import Blog1 from "../../public/home/blog1.svg";
 import Blog2 from "../../public/home/Blog2.svg";
 import HomeImg from "../../public/home/banner.svg";
 import Reservation from "./component/ReservationForm";
+import Testimonial from "./component/Testimonial";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const testimonials = [
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 1",
+      designation: "designer"
+    },
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 2",
+      designation: "designer"
+    },
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 3",
+      designation: "designer"
+    },
+  ];
+
   const router = useRouter();
 
   const getMenu = () => {
@@ -303,8 +326,8 @@ export default function Home() {
 
       <div className="mt-14 bg-blue">
         <div className="py-24 mx-12 md:mx-16 lg:mx-36 xl:mx-64">
-          <div className="border-y-2 border-yellow text-white w-28 text-center">
-            TESTIMONIAL
+          <div className="border-y-2 border-yellow text-white w-28 text-center uppercase">
+          Testimonial
           </div>
           <div className="text-white mt-4">
             <p className="font-bold text-xl">What our clients say</p>
@@ -312,11 +335,14 @@ export default function Home() {
               What our clients say What our clients say What our clients say
             </p>
           </div>
+          <div className="pt-24">
+          <Testimonial testimonials={testimonials} />
+          </div>
         </div>
-        <div>
+        <div className="hidden sm:block">
           <Image
             alt=""
-            src={Testimonial}
+            src={TestimonialImg}
             height={100}
             className="w-full h-[450px]"
           />
