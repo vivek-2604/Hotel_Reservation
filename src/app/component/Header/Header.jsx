@@ -27,7 +27,7 @@ const Header = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setMenuOpen(false); // Close the menu if the window size is small
+        setMenuOpen(false);
       }
     };
     window.addEventListener("resize", handleResize);
@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <div className="bg-blue text-white">
-      <div className="flex px-12 py-10 border-b-2 justify-between items-center xl:px-64 md:px-16 lg:px-36 md:border-b-0">
+      <div className="flex px-12 py-5 border-b-2 justify-between items-center md:py-10 xl:px-64 md:px-16 lg:px-36 md:border-b-0">
         <button className="border h-10 px-2 font-medium hidden lg:block">
           call-1234156
         </button>

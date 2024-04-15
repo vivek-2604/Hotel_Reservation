@@ -20,6 +20,8 @@ import Blog2 from "../../public/home/Blog2.svg";
 import HomeImg from "../../public/home/banner.svg";
 import Reservation from "./component/ReservationForm";
 import { useRouter } from "next/navigation";
+import { blogs } from "@/lib/data";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -39,7 +41,10 @@ export default function Home() {
             Simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy .
           </p>
-          <button className="w-full sm:w-1/3 border-2 border-yellow p-2" onClick={getMenu}>
+          <button
+            className="w-full sm:w-1/3 border-2 border-yellow p-2"
+            onClick={getMenu}
+          >
             View Menu
           </button>
         </div>
@@ -460,7 +465,10 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center mt-10">
-            <button className="border-yellow border-2 px-4 py-2" onClick={getMenu}>
+            <button
+              className="border-yellow border-2 px-4 py-2"
+              onClick={getMenu}
+            >
               See all dishes
             </button>
           </div>
@@ -534,58 +542,37 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-10 mt-12">
-            <div className="w-full border">
-              <Image
-                alt=""
-                src={Blog1}
-                width={100}
-                height={100}
-                className="w-full"
-              />
-              <div className="mt-4 py-6 px-4">
-                <div className="flex flex-col sm:flex-row gap-6 items-center">
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Restaurants
-                  </p>
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Feb 22, 2023
-                  </p>
-                </div>
-                <p className="mt-4 font-semibold text-xl">
-                  The Most Popular Delicious Food Of Meditrerranean Cuision
-                </p>
-                <p className="mt-4 font-medium text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt,Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-            </div>
-            <div className="w-full border">
-              <Image
-                alt=""
-                src={Blog2}
-                width={100}
-                height={100}
-                className="w-full"
-              />
-              <div className="mt-4 py-6 px-4">
-                <div className="flex flex-col sm:flex-row gap-6 items-center">
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Restaurants
-                  </p>
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Feb 22, 2023
-                  </p>
-                </div>
-                <p className="mt-4 font-semibold text-xl">
-                  The Most Popular Delicious Food Of Meditrerranean Cuision
-                </p>
-                <p className="mt-4 font-medium text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt,Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-            </div>
+            {blogs.slice(0, 2).map((item, index) => {
+              return (
+                <Link href={`/blog/${item.slug}`}>
+                  <div key={index} className="w-full border">
+                    <Image
+                      alt=""
+                      src={Blog1}
+                      width={100}
+                      height={100}
+                      className="w-full"
+                    />
+                    <div className="mt-4 py-6 px-4">
+                      <div className="flex flex-col sm:flex-row gap-6 items-center">
+                        <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
+                          {item.category}
+                        </p>
+                        <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
+                          {item.releaseDate}
+                        </p>
+                      </div>
+                      <p className="mt-4 font-semibold text-xl line-clamp-2">
+                        {item.title}
+                      </p>
+                      <p className="mt-4 font-medium text-base line-clamp-3">
+                        {item.content}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
