@@ -1,27 +1,24 @@
 "use client";
-import Image from "next/image";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { blogs } from "@/lib/data";
+import { menuData } from "@/lib/menuFile";
+import MenuList from "./component/MenuList/MenuList";
 import Story from "../../public/home/story.svg";
 import Menu from "../../public/home/menu.svg";
-import Drink from "../../public/home/drink.svg";
 import Testimonial from "../../public/home/testimonial.png";
 import OfferPrice1 from "../../public/home/offer_price_1.svg";
 import OfferPrice2 from "../../public/home/offer_price_2.svg";
 import Burger from "../../public/home/offer_1.svg";
 import Menu1 from "../../public/home/menu1.svg";
-import Menu2 from "../../public/home/menu2.svg";
-import Menu3 from "../../public/home/menu3.svg";
-import Menu4 from "../../public/home/menu4.svg";
 import Icon1 from "../../public/home/icon1.png";
 import Icon2 from "../../public/home/icon2.png";
 import Icon3 from "../../public/home/icon3.png";
 import Blog1 from "../../public/home/blog1.svg";
-import Blog2 from "../../public/home/Blog2.svg";
 import HomeImg from "../../public/home/banner.svg";
 import Reservation from "./component/ReservationForm";
-import { useRouter } from "next/navigation";
-import { blogs } from "@/lib/data";
-import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -133,7 +130,6 @@ export default function Home() {
           <div className="mt-2 md:w-1/3">
             <p className="font-bold text-xl">Try Our Special Offers</p>
             <p className="text-base font-normal">
-              {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Venenatis lectus
@@ -155,152 +151,60 @@ export default function Home() {
           <div className="md:mt-2 md:w-2/3">
             <p className="font-bold text-xl">Starter</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Starter";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
             <p className="font-bold text-xl mt-10">Main Dish</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Main Course";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
             <p className="font-bold text-xl mt-10">Desert</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Dessert";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -400,69 +304,36 @@ export default function Home() {
             <p className="text-center font-bold text-xl text-blue">
               Popular Dishes
             </p>
-            <p className="text-center font-normal text-base lg:px-56">
+            <p className="text-center font-normal text-base xl:px-56">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-12 gap-5">
-            <div>
-              <div>
-                <Image alt="" src={Menu1} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Biriyani</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu2} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>HotDog</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu3} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Mocktail</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu4} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Burger</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 mt-12 gap-5">
+            {menuData
+              .filter((item) => {
+                return item.popular === true;
+              })
+              .slice(0, 3)
+              .map((item, index) => {
+                return (
+                  <div key={index}>
+                    <div>
+                      <Image alt="" src={Menu1} className="w-full" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold flex justify-between">
+                        <p>{item.name}</p>
+                        <span>${item.price}</span>
+                      </div>
+                      <p className="text-sm font-medium mt-4">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
           <div className="flex justify-center mt-10">
             <button
@@ -485,7 +356,6 @@ export default function Home() {
               Our Great Services
             </p>
             <p className="mt-2 text-base text-white font-normal">
-              {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt,Lorem ipsum dolor sit amet
             </p>
@@ -544,7 +414,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row gap-10 mt-12">
             {blogs.slice(0, 2).map((item, index) => {
               return (
-                <Link href={`/blog/${item.slug}`}>
+                <Link href={`/blog/${item.slug}`} className="w-full">
                   <div key={index} className="w-full border">
                     <Image
                       alt=""
