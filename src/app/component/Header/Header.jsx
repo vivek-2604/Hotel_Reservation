@@ -94,14 +94,18 @@ const Header = () => {
       </div>
       {menuOpen && (
         <div className="flex bg-white text-blue px-10">
-          <div className="">
+          <div className="w-full">
             <ul className="flex flex-col justify-between text-lg font-medium gap-1">
               {NavRoutes.map((route, i) => {
                 const { title, href } = route;
                 return (
-                  <li key={i} className="boreder-b-2 border-yellow">
-                    <Link href={href}>{title}</Link>
-                  </li>
+                  <Link href={href}>
+                    <div onClick={()=>{setMenuOpen(false)}} className="hover:bg-metal_grey hover:bg-opacity-20 rounded-md">
+                      <li key={i} className="boreder-b-2 border-yellow">
+                        {title}
+                      </li>
+                    </div>
+                  </Link>
                 );
               })}
             </ul>

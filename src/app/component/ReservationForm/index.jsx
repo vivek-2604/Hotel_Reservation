@@ -143,6 +143,11 @@ const Reservation = () => {
                     autoComplete="off"
                     className="px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
                   />
+                  <style jsx>{`
+                    input[type="time"]::-webkit-calendar-picker-indicator {
+                      filter: invert(1);
+                    }
+                  `}</style>
                   {errors.time && touched.time && (
                     <span className="text-error_red">{errors.time}</span>
                   )}
@@ -163,6 +168,11 @@ const Reservation = () => {
                     autoComplete="off"
                     className="px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
                   />
+                  <style jsx>{`
+                    input[type="date"]::-webkit-calendar-picker-indicator {
+                      filter: invert(1);
+                    }
+                  `}</style>
                   {errors.date && touched.date && (
                     <span className="text-error_red">{errors.date}</span>
                   )}
