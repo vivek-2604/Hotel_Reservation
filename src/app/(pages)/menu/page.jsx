@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
 import Reservation from "@/app/component/ReservationForm";
-import MenuImg from "../../../../public/menu/menu.svg";
+import MenuImg from "../../../../public/menu/starter.jpeg";
 import MenuBg1 from "../../../../public/menu/menu_img_1.svg";
 import MenuBg2 from "../../../../public/menu/menu_img_2.svg";
 import { useRouter } from "next/navigation";
 import { menuData } from "@/lib/menuFile";
-import Link from "next/link";
 import MenuList from "@/app/component/MenuList/MenuList";
 
 const Menu = () => {
