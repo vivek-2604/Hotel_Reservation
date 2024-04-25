@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "../../../../public/home/logo.png";
-import Insta from "../../../../public/home/insta.svg";
+import Insta from "../../../../public/home/Insta.svg";
 import FB from "../../../../public/home/fb.svg";
 import Twitter from "../../../../public/home/twitter.svg";
 
