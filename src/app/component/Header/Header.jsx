@@ -8,7 +8,7 @@ import Cart from "../../../../public/home/cart.svg";
 import Insta from "../../../../public/home/Insta.svg";
 import FB from "../../../../public/home/fb.svg";
 import Twitter from "../../../../public/home/twitter.svg";
-import MenuIcon from "../../../../public/home/MenuIcon.svg";
+import MenuIcon from "../../../../public/home/menuIcon.svg";
 import { NavRoutes } from "../nav-route";
 import { useRouter } from "next/navigation";
 
