@@ -6,18 +6,7 @@ import { useRouter } from "next/navigation";
 import { blogs } from "@/lib/data";
 import { menuData } from "@/lib/menuFile";
 import MenuList from "./component/MenuList/MenuList";
-import Story from "../../public/home/story.svg";
-import Menu from "../../public/home/menu.svg";
-import Testimonial from "../../public/home/testimonial.png";
-import OfferPrice1 from "../../public/home/offer_price_1.svg";
-import OfferPrice2 from "../../public/home/offer_price_2.svg";
-import Burger from "../../public/home/offer_1.svg";
-import Menu1 from "../../public/home/menu1.svg";
-import Icon1 from "../../public/home/Icon1.png";
-import Icon2 from "../../public/home/Icon2.png";
-import Icon3 from "../../public/home/Icon3.png";
-import Blog1 from "../../public/home/blog1.svg";
-import HomeImg from "../../public/home/banner.svg";
+
 import Reservation from "./component/ReservationForm";
 
 export default function Home() {
@@ -49,7 +38,9 @@ export default function Home() {
           <Image
             alt=""
             className="rounded-t-full overflow-hidden z-10 relative"
-            src={HomeImg}
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194951/home/banner_ebmvoe.svg"
+            width={1000}
+            height={100}
           />
         </div>
       </div>
@@ -87,7 +78,7 @@ export default function Home() {
             <Image
               alt=""
               className="xl:h-60 w-full xl:w-80"
-              src={Story}
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194981/home/story_nebqv9.svg"
               width={100}
               height={100}
             />
@@ -136,7 +127,7 @@ export default function Home() {
             </p>
             <Image
               alt=""
-              src={Menu}
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715195596/home/pexels-valeriya-842571_kg5bec.jpg"
               width={300}
               height={500}
               className="mt-9 hidden md:block"
@@ -225,7 +216,8 @@ export default function Home() {
         <div>
           <Image
             alt=""
-            src={Testimonial}
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194964/home/testimonial_qpjs3u.png"
+            width={10000}
             height={100}
             className="w-full h-[450px]"
           />
@@ -250,10 +242,18 @@ export default function Home() {
           <div className="flex flex-col xl:flex-row xl:justify-between gap-5 mt-10">
             <div
               className="flex border-2 border-yellow bg-cover bg-center p-4 xl:w-1/2"
-              style={{ backgroundImage: "url('/home/offer_bg-1.svg')" }}
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194953/home/offer_bg-1_gtsw5x.svg')",
+              }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image alt="" src={OfferPrice1} width={100} height={100} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194956/home/offer_price_1_r3ycaw.svg"
+                  width={100}
+                  height={100}
+                />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -261,7 +261,6 @@ export default function Home() {
                   Veg Burger
                 </p>
                 <p className="text-base font-normal mt-2 text-blue">
-                  {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor
                 </p>
@@ -270,7 +269,7 @@ export default function Home() {
                 <Image
                   alt=""
                   className="w-64"
-                  src={Burger}
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194973/home/offer_1_wgrskl.svg"
                   width={100}
                   height={100}
                 />
@@ -278,10 +277,18 @@ export default function Home() {
             </div>
             <div
               className="flex border-2 border-yellow p-4 bg-cover bg-center xl:w-1/2"
-              style={{ backgroundImage: "url('/home/offer_bg-2.svg')" }}
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194978/home/offer_bg-2_hnbkv2.svg')",
+              }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image alt="" src={OfferPrice2} width={100} height={100} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194958/home/offer_price_2_ot3wnh.svg"
+                  width={100}
+                  height={100}
+                />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -320,7 +327,13 @@ export default function Home() {
                 return (
                   <div key={index}>
                     <div>
-                      <Image alt="" src={Menu1} className="w-full" />
+                      <Image
+                        alt=""
+                        src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194938/home/menu1_sfhecf.svg"
+                        className="w-full"
+                        width={100}
+                        height={100}
+                      />
                     </div>
                     <div>
                       <div className="text-lg font-bold flex justify-between">
@@ -364,7 +377,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon1}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon1_krfeo4.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -374,7 +387,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon2}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon2_pvt7ck.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -386,7 +399,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon3}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon2_pvt7ck.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -418,7 +431,7 @@ export default function Home() {
                   <div key={index} className="w-full border">
                     <Image
                       alt=""
-                      src={Blog1}
+                      src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194603/blog/blog1_s6gjnm.svg"
                       width={100}
                       height={100}
                       className="w-full"
@@ -449,7 +462,10 @@ export default function Home() {
 
       <div
         className="w-full h-4/5 py-28 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/Background.svg')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
+        }}
       >
         <Reservation />
       </div>

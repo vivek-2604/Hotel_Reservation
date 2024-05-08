@@ -1,7 +1,6 @@
 import { getSingleMenu } from "@/lib/menuFile";
 import Image from "next/image";
 import React from "react";
-import MenuImg from "../../../../../public/menu/menu.svg";
 import Tab from "@/app/component/Tabs/Tab";
 import Review from "@/app/component/Review/Review";
 import { Reviews } from "@/lib/reviews";
@@ -33,7 +32,12 @@ const page = async ({ params }) => {
     <div className="flex flex-col justify-center items-center mx-12 md:mx-16 lg:mx-36 xl:mx-64 my-10">
       <div className="flex flex-col md:flex-row gap-10 my-10">
         <div className="w-full md:w-2/5">
-          <Image src={MenuImg} className="w-full" />
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715190602/menu/single_menu.jpg"
+            width={300}
+            height={100}
+            className="w-full"
+          />
         </div>
         <div className="w-full md:w-3/5 space-y-8">
           <div className="flex flex-col justify-start gap-5">

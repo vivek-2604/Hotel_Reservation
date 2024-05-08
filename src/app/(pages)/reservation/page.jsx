@@ -1,7 +1,5 @@
-import Heading from "@/app/component/Heading/Heading";
 import Image from "next/image";
-import ReservationImg from "../../../../public/reservation/reservation.svg";
-import WhyUsImg from "../../../../public/reservation/whyus.svg";
+import Heading from "@/app/component/Heading/Heading";
 
 const Reservation = () => {
   return (
@@ -60,20 +58,30 @@ const Reservation = () => {
                   className="border py-2 px-3 sm:w-1/2"
                 />
               </div>
-              <button className="px-4 py-2 border-2 border-yellow w-full md:w-1/4 lg:w-full 2xl:w-1/4">
+              <button className="px-4 py-2 border-2 border-yellow w-full md:w-1/4 lg:w-full 2xl:w-1/2">
                 Book a Table
               </button>
             </div>
           </div>
           <div className="hidden lg:block lg:w-1/2">
-            <Image src={ReservationImg} className="min-h-[570px]" />
+            <Image
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715191221/reservation/reservation_xctgkn.svg"
+              width={1000}
+              height={100}
+              className="min-h-[570px]"
+            />
           </div>
         </div>
       </div>
       <div className="mx-12 md:mx-16 lg:mx-36 xl:mx-64 my-10 md:my-20">
         <div className="flex gap-10">
           <div className="hidden lg:w-1/2 lg:block">
-            <Image src={WhyUsImg} className="min-h-[470px]" />
+            <Image
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715191228/reservation/whyus_r95bcp.svg"
+              width={1000}
+              height={100}
+              className="min-h-[470px]"
+            />
           </div>
           <div className="py-10 lg:w-1/2">
             <div className="flex flex-col gap-4">
