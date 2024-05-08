@@ -3,9 +3,6 @@
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
 import Reservation from "@/app/component/ReservationForm";
-import MenuImg from "../../../../public/menu/starter.jpeg";
-import MenuBg1 from "../../../../public/menu/menu_img_1.svg";
-import MenuBg2 from "../../../../public/menu/menu_img_2.svg";
 import { useRouter } from "next/navigation";
 import { menuData } from "@/lib/menuFile";
 import MenuList from "@/app/component/MenuList/MenuList";
@@ -30,7 +27,11 @@ const Menu = () => {
       <Heading children="Our Menu" />
       <div className="my-10 lg:my-20 flex gap-10 px-12 md:px-16 xl:px-64 lg:px-36">
         <div className="hidden md:block w-2/5">
-          <Image src={MenuImg} />
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713703877/menu/starter_p4z4ts.jpg"
+            width={1000}
+            height={100}
+          />
         </div>
         <div className="w-full md:w-3/5">
           <p className="text-2xl font-semibold">Starter</p>
@@ -59,11 +60,19 @@ const Menu = () => {
         </div>
       </div>
       <div className="my-10 lg:my-20 h-[250px] overflow-hidden">
-        <Image src={MenuBg1} height={1000} />
+        <Image
+          src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713698777/menu/menu_img_1_qthcfy.svg"
+          width={10000}
+          height={100}
+        />
       </div>
       <div className="my-10 lg:my-20 flex flex-row-reverse gap-10 px-12 md:px-16 xl:px-64 lg:px-36">
         <div className="hidden md:block w-2/5">
-          <Image src={MenuImg} />
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713703882/menu/mainCourse_wzmrdo.jpg"
+            width={1000}
+            height={100}
+          />
         </div>
         <div className="w-full md:w-3/5">
           <p className="text-2xl font-semibold">Main Course</p>
@@ -92,11 +101,19 @@ const Menu = () => {
         </div>
       </div>
       <div className="my-10 lg:my-20 h-[250px] overflow-hidden">
-        <Image src={MenuBg2} height={1000} />
+        <Image
+          src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713698779/menu/menu_img_2_et8hyd.svg"
+          width={10000}
+          height={100}
+        />
       </div>
       <div className="my-10 lg:my-20 flex gap-10 px-12 md:px-16 xl:px-64 lg:px-36">
         <div className="hidden md:block w-2/5 min-h-[557px]:">
-          <Image src={MenuImg} />
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713703877/menu/deseert_uvfqjw.jpg"
+            width={1000}
+            height={100}
+          />
         </div>
         <div className="w-full md:w-3/5">
           <p className="text-2xl font-semibold">Desert</p>
@@ -126,7 +143,10 @@ const Menu = () => {
       </div>
       <div
         className="w-full h-4/5 py-28 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/Background.svg')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
+        }}
       >
         <Reservation />
       </div>

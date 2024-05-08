@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getBlogs } from "@/lib/data";
 import Reservation from "@/app/component/ReservationForm";
-import Blog1 from "../../../../public/home/blog1.svg";
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
 
@@ -28,12 +27,12 @@ const Blog = async () => {
           </div>
           <div className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {blog.map((item,index) => {
+              {blog.map((item, index) => {
                 return (
                   <Link href={`/blog/${item.slug}`}>
                     <div className="w-full border">
                       <Image
-                        src={Blog1}
+                        src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194603/blog/blog1_s6gjnm.svg"
                         width={100}
                         height={100}
                         className="w-full"
@@ -51,7 +50,7 @@ const Blog = async () => {
                           {item.title}
                         </p>
                         <p className="mt-4 font-medium text-base line-clamp-3">
-                         {item.content  }
+                          {item.content}
                         </p>
                       </div>
                     </div>
@@ -69,7 +68,10 @@ const Blog = async () => {
       </div>
       <div
         className="w-full h-4/5 py-28 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/Background.svg')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
+        }}
       >
         <Reservation />
       </div>

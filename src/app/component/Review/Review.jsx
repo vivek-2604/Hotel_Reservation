@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Avatar from "../../../../public/menu/avatar.svg";
 import { useState } from "react";
 
 const Review = ({ review }) => {
@@ -47,7 +46,9 @@ const Review = ({ review }) => {
           <div className="flex items-start mb-6" key={index}>
             <Image
               className="w-12 h-12 rounded-full mr-4"
-              src={Avatar}
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1713698775/menu/avatar_qbtk0t.svg"
+              width={100}
+              height={100}
               alt={`Avatar of ${item.name}`}
             />
             <div>
