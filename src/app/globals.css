@@ -21,3 +21,11 @@
     text-wrap: balance;
   }
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292E36;
+}

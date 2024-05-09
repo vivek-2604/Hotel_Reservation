@@ -3,8 +3,6 @@ import Category from "@/app/component/about-us/category";
 import Chef from "@/app/component/about-us/Chef Data";
 import Gallary from "@/app/component/about-us/Gallary";
 import Reservation from "@/app/component/ReservationForm";
-import Banner from "../../../../public/about-us/banner_img.svg";
-import Name from "../../../../public/about-us/name_sign.svg";
 import Testimonial from "@/app/component/Testimonial";
 
 const About = () => {
@@ -13,19 +11,19 @@ const About = () => {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 1",
-      designation: "designer"
+      designation: "designer",
     },
     {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 2",
-      designation: "designer"
+      designation: "designer",
     },
     {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 3",
-      designation: "designer"
+      designation: "designer",
     },
   ];
 
@@ -45,13 +43,23 @@ const About = () => {
             letters, as opposed to using 'Content here, content gfshere making
             look like readable English. Many desktop publishing packages.
           </p>
-          <Image src={Name} className="mt-4" />
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715191891/about%20us/name_sign_ah0x37.svg"
+            width={200}
+            height={100}
+            className="mt-4"
+          />
           <button className="border-2 border-yellow px-8 py-2 mt-4">
             See More
           </button>
         </div>
         <div className="hidden lg:block">
-          <Image className="" src={Banner} />
+          <Image
+            className=""
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715191822/about%20us/banner_img_whnmp1.svg"
+            width={700}
+            height={100}
+          />
         </div>
       </div>
       <div className="my-10 lg:my-20">
@@ -88,7 +96,10 @@ const About = () => {
       </div>
       <div
         className="w-full h-4/5 py-28 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/Background.svg')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
+        }}
       >
         <Reservation />
       </div>

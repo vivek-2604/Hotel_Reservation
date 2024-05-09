@@ -13,7 +13,7 @@ const Gallary = () => {
         <Image src={Img2} />
       </div>
       <div className="overflow-hidden">
-        <Image src={Img3} className="scale-110"/>
+        <Image src={Img3} className="scale-110" />
       </div>
       <div className="flex flex-col gap-1 md:gap-2 lg:gap-4">
         <Image src={Img4} />

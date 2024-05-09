@@ -3,12 +3,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Logo from "../../../../public/home/logo.png";
-import Cart from "../../../../public/home/cart.svg";
-import Insta from "../../../../public/home/insta.svg";
-import FB from "../../../../public/home/fb.svg";
-import Twitter from "../../../../public/home/twitter.svg";
-import MenuIcon from "../../../../public/home/MenuIcon.svg";
 import { NavRoutes } from "../nav-route";
 import { useRouter } from "next/navigation";
 
@@ -27,7 +21,7 @@ const Header = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setMenuOpen(false); // Close the menu if the window size is small
+        setMenuOpen(false);
       }
     };
     window.addEventListener("resize", handleResize);
@@ -39,14 +33,26 @@ const Header = () => {
 
   return (
     <div className="bg-blue text-white">
-      <div className="flex px-12 py-10 border-b-2 justify-between items-center xl:px-64 md:px-16 lg:px-36 md:border-b-0">
+      <div className="flex px-12 py-5 border-b-2 justify-between items-center md:py-10 xl:px-64 md:px-16 lg:px-36 md:border-b-0">
         <button className="border h-10 px-2 font-medium hidden lg:block">
           call-1234156
         </button>
-        <Image alt="" className="text-lg" src={Logo} width={100} height={100} />
+        <Image
+          alt=""
+          className="text-lg"
+          src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194932/home/logo_xinusc.png"
+          width={100}
+          height={100}
+        />
         <div className="flex gap-7 items-center">
           <button className="border h-10 px-2 font-medium">
-            <Image alt="" src={Cart} width={30} height={30} className="p-1" />
+            <Image
+              alt=""
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194924/home/cart_zi38gj.svg"
+              width={30}
+              height={30}
+              className="p-1"
+            />
           </button>
           <button
             className="text-blue bg-yellow font-semibold h-10 px-2 hidden md:block"
@@ -55,7 +61,12 @@ const Header = () => {
             Reservation
           </button>
           <button className="block md:hidden" onClick={toggleMenu}>
-            <Image alt="" src={MenuIcon} width={50} height={100} />
+            <Image
+              alt=""
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194950/home/menuIcon_co0ajb.svg"
+              width={50}
+              height={100}
+            />
           </button>
         </div>
       </div>
@@ -76,17 +87,32 @@ const Header = () => {
           <ul className="hidden ml-20 justify-between xl:flex">
             <li>
               <Link href="/">
-                <Image alt="" src={Insta} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194929/home/Insta_ua2iol.svg"
+                  width={30}
+                  height={100}
+                />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image alt="" src={FB} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194925/home/fb_e2cxh3.svg"
+                  width={30}
+                  height={100}
+                />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image alt="" src={Twitter} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194968/home/twitter_aq1km5.svg"
+                  width={30}
+                  height={100}
+                />
               </Link>
             </li>
           </ul>
@@ -94,14 +120,23 @@ const Header = () => {
       </div>
       {menuOpen && (
         <div className="flex bg-white text-blue px-10">
-          <div className="">
+          <div className="w-full">
             <ul className="flex flex-col justify-between text-lg font-medium gap-1">
               {NavRoutes.map((route, i) => {
                 const { title, href } = route;
                 return (
-                  <li key={i} className="boreder-b-2 border-yellow">
-                    <Link href={href}>{title}</Link>
-                  </li>
+                  <Link href={href}>
+                    <div
+                      onClick={() => {
+                        setMenuOpen(false);
+                      }}
+                      className="hover:bg-metal_grey hover:bg-opacity-20 rounded-md"
+                    >
+                      <li key={i} className="boreder-b-2 border-yellow">
+                        {title}
+                      </li>
+                    </div>
+                  </Link>
                 );
               })}
             </ul>

@@ -1,26 +1,13 @@
 "use client";
-import Image from "next/image";
 import "./globals.css";
-import Story from "../../public/home/story.svg";
-import Menu from "../../public/home/menu.svg";
-import Drink from "../../public/home/drink.svg";
-import TestimonialImg from "../../public/home/testimonial.png";
-import OfferPrice1 from "../../public/home/offer_price_1.svg";
-import OfferPrice2 from "../../public/home/offer_price_2.svg";
-import Burger from "../../public/home/offer_1.svg";
-import Menu1 from "../../public/home/menu1.svg";
-import Menu2 from "../../public/home/menu2.svg";
-import Menu3 from "../../public/home/menu3.svg";
-import Menu4 from "../../public/home/menu4.svg";
-import Icon1 from "../../public/home/icon1.png";
-import Icon2 from "../../public/home/icon2.png";
-import Icon3 from "../../public/home/icon3.png";
-import Blog1 from "../../public/home/blog1.svg";
-import Blog2 from "../../public/home/Blog2.svg";
-import HomeImg from "../../public/home/banner.svg";
-import Reservation from "./component/ReservationForm";
-import Testimonial from "./component/Testimonial";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { blogs } from "@/lib/data";
+import { menuData } from "@/lib/menuFile";
+import MenuList from "./component/MenuList/MenuList";
+
+import Reservation from "./component/ReservationForm";
 
 export default function Home() {
 
@@ -62,7 +49,10 @@ export default function Home() {
             Simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy .
           </p>
-          <button className="w-full sm:w-1/3 border-2 border-yellow p-2" onClick={getMenu}>
+          <button
+            className="w-full sm:w-1/3 border-2 border-yellow p-2"
+            onClick={getMenu}
+          >
             View Menu
           </button>
         </div>
@@ -70,7 +60,9 @@ export default function Home() {
           <Image
             alt=""
             className="rounded-t-full overflow-hidden z-10 relative"
-            src={HomeImg}
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194951/home/banner_ebmvoe.svg"
+            width={1000}
+            height={100}
           />
         </div>
       </div>
@@ -108,7 +100,7 @@ export default function Home() {
             <Image
               alt=""
               className="xl:h-60 w-full xl:w-80"
-              src={Story}
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194981/home/story_nebqv9.svg"
               width={100}
               height={100}
             />
@@ -151,14 +143,13 @@ export default function Home() {
           <div className="mt-2 md:w-1/3">
             <p className="font-bold text-xl">Try Our Special Offers</p>
             <p className="text-base font-normal">
-              {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Venenatis lectus
             </p>
             <Image
               alt=""
-              src={Menu}
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715195596/home/pexels-valeriya-842571_kg5bec.jpg"
               width={300}
               height={500}
               className="mt-9 hidden md:block"
@@ -173,152 +164,60 @@ export default function Home() {
           <div className="md:mt-2 md:w-2/3">
             <p className="font-bold text-xl">Starter</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Starter";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
             <p className="font-bold text-xl mt-10">Main Dish</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Main Course";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
             <p className="font-bold text-xl mt-10">Desert</p>
             <div className="mt-2">
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mt-5">
-                <Image alt="" src={Drink} width={50} height={5} />
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p className="text-lg font-semibold">
-                      Raw Scallops from Erquy
-                    </p>
-                    <p className="text-base font-medium">
-                      Candied Jerusalem artichokes truffle
-                    </p>
-                  </div>
-                  <p className="text-lg font-semibold">$40</p>
-                </div>
-              </div>
+              {menuData
+                .filter((item) => {
+                  return item.category === "Dessert";
+                })
+                .slice(0, 5)
+                .map((item, index) => {
+                  return (
+                    <MenuList
+                      key={index}
+                      slug={item.slug}
+                      name={item.name}
+                      description={item.description}
+                      price={item.price}
+                    />
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -342,7 +241,8 @@ export default function Home() {
         <div className="hidden sm:block">
           <Image
             alt=""
-            src={TestimonialImg}
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194964/home/testimonial_qpjs3u.png"
+            width={10000}
             height={100}
             className="w-full h-[450px]"
           />
@@ -367,10 +267,18 @@ export default function Home() {
           <div className="flex flex-col xl:flex-row xl:justify-between gap-5 mt-10">
             <div
               className="flex border-2 border-yellow bg-cover bg-center p-4 xl:w-1/2"
-              style={{ backgroundImage: "url('/home/offer_bg-1.svg')" }}
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194953/home/offer_bg-1_gtsw5x.svg')",
+              }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image alt="" src={OfferPrice1} width={100} height={100} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194956/home/offer_price_1_r3ycaw.svg"
+                  width={100}
+                  height={100}
+                />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -378,7 +286,6 @@ export default function Home() {
                   Veg Burger
                 </p>
                 <p className="text-base font-normal mt-2 text-blue">
-                  {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor
                 </p>
@@ -387,7 +294,7 @@ export default function Home() {
                 <Image
                   alt=""
                   className="w-64"
-                  src={Burger}
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194973/home/offer_1_wgrskl.svg"
                   width={100}
                   height={100}
                 />
@@ -395,10 +302,18 @@ export default function Home() {
             </div>
             <div
               className="flex border-2 border-yellow p-4 bg-cover bg-center xl:w-1/2"
-              style={{ backgroundImage: "url('/home/offer_bg-2.svg')" }}
+              style={{
+                backgroundImage:
+                  "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194978/home/offer_bg-2_hnbkv2.svg')",
+              }}
             >
               <div className="pl-4 w-1/2 pt-4">
-                <Image alt="" src={OfferPrice2} width={100} height={100} />
+                <Image
+                  alt=""
+                  src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194958/home/offer_price_2_ot3wnh.svg"
+                  width={100}
+                  height={100}
+                />
                 <p className="border-y-2 border-blue text-sm font-normal text-blue w-32 mt-4">
                   50% OFFER GOING
                 </p>
@@ -421,72 +336,48 @@ export default function Home() {
             <p className="text-center font-bold text-xl text-blue">
               Popular Dishes
             </p>
-            <p className="text-center font-normal text-base lg:px-56">
+            <p className="text-center font-normal text-base xl:px-56">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-12 gap-5">
-            <div>
-              <div>
-                <Image alt="" src={Menu1} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Biriyani</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu2} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>HotDog</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu3} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Mocktail</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <Image alt="" src={Menu4} className="w-full" />
-              </div>
-              <div>
-                <div className="text-lg font-bold flex justify-between">
-                  <p>Burger</p>
-                  <span>$15</span>
-                </div>
-                <p className="text-sm font-medium mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 mt-12 gap-5">
+            {menuData
+              .filter((item) => {
+                return item.popular === true;
+              })
+              .slice(0, 3)
+              .map((item, index) => {
+                return (
+                  <div key={index}>
+                    <div>
+                      <Image
+                        alt=""
+                        src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194938/home/menu1_sfhecf.svg"
+                        className="w-full"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold flex justify-between">
+                        <p>{item.name}</p>
+                        <span>${item.price}</span>
+                      </div>
+                      <p className="text-sm font-medium mt-4">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
           <div className="flex justify-center mt-10">
-            <button className="border-yellow border-2 px-4 py-2" onClick={getMenu}>
+            <button
+              className="border-yellow border-2 px-4 py-2"
+              onClick={getMenu}
+            >
               See all dishes
             </button>
           </div>
@@ -503,7 +394,6 @@ export default function Home() {
               Our Great Services
             </p>
             <p className="mt-2 text-base text-white font-normal">
-              {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt,Lorem ipsum dolor sit amet
             </p>
@@ -512,7 +402,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon1}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon1_krfeo4.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -522,7 +412,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon2}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon2_pvt7ck.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -534,7 +424,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center border-8 border-metal_grey gap-4 w-full h-40">
               <Image
                 alt=""
-                src={Icon3}
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194927/home/Icon2_pvt7ck.png"
                 className="w-7 h-7"
                 width={30}
                 height={30}
@@ -560,65 +450,47 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-10 mt-12">
-            <div className="w-full border">
-              <Image
-                alt=""
-                src={Blog1}
-                width={100}
-                height={100}
-                className="w-full"
-              />
-              <div className="mt-4 py-6 px-4">
-                <div className="flex flex-col sm:flex-row gap-6 items-center">
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Restaurants
-                  </p>
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Feb 22, 2023
-                  </p>
-                </div>
-                <p className="mt-4 font-semibold text-xl">
-                  The Most Popular Delicious Food Of Meditrerranean Cuision
-                </p>
-                <p className="mt-4 font-medium text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt,Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-            </div>
-            <div className="w-full border">
-              <Image
-                alt=""
-                src={Blog2}
-                width={100}
-                height={100}
-                className="w-full"
-              />
-              <div className="mt-4 py-6 px-4">
-                <div className="flex flex-col sm:flex-row gap-6 items-center">
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Restaurants
-                  </p>
-                  <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
-                    Feb 22, 2023
-                  </p>
-                </div>
-                <p className="mt-4 font-semibold text-xl">
-                  The Most Popular Delicious Food Of Meditrerranean Cuision
-                </p>
-                <p className="mt-4 font-medium text-base">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt,Lorem ipsum dolor sit amet,
-                </p>
-              </div>
-            </div>
+            {blogs.slice(0, 2).map((item, index) => {
+              return (
+                <Link href={`/blog/${item.slug}`} className="w-full">
+                  <div key={index} className="w-full border">
+                    <Image
+                      alt=""
+                      src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194603/blog/blog1_s6gjnm.svg"
+                      width={100}
+                      height={100}
+                      className="w-full"
+                    />
+                    <div className="mt-4 py-6 px-4">
+                      <div className="flex flex-col sm:flex-row gap-6 items-center">
+                        <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
+                          {item.category}
+                        </p>
+                        <p className="font-semibold text-base text-blue border-y-2 border-yellow text-center uppercase">
+                          {item.releaseDate}
+                        </p>
+                      </div>
+                      <p className="mt-4 font-semibold text-xl line-clamp-2">
+                        {item.title}
+                      </p>
+                      <p className="mt-4 font-medium text-base line-clamp-3">
+                        {item.content}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
 
       <div
         className="w-full h-4/5 py-28 bg-cover bg-center"
-        style={{ backgroundImage: "url('/home/Background.svg')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
+        }}
       >
         <Reservation />
       </div>

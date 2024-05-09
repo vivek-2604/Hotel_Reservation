@@ -1,9 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../../../../public/home/logo.png";
-import Insta from "../../../../public/home/insta.svg";
-import FB from "../../../../public/home/fb.svg";
-import Twitter from "../../../../public/home/twitter.svg";
 
 const Footer = () => {
   return (
@@ -11,7 +7,11 @@ const Footer = () => {
       <div className="bg-blue">
         <div className="mx-12 pt-10 pb-5 border-t-2 md:mx-16 lg:mx-36 xl:mx-64">
           <div className="flex justify-center">
-            <Image src={Logo} width={100} height={100} />
+            <Image
+              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194932/home/logo_xinusc.png"
+              width={100}
+              height={100}
+            />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-36 mt-10">
             <div className="flex flex-col w-2/3 mx-auto xl:w-full">
@@ -52,9 +52,21 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center gap-5 pt-8 md:flex-row md:justify-between">
             <div className="flex gap-8">
-              <Image src={Insta} />
-              <Image src={FB} />
-              <Image src={Twitter} />
+              <Image
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194929/home/Insta_ua2iol.svg"
+                width={30}
+                height={100}
+              />
+              <Image
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194925/home/fb_e2cxh3.svg"
+                width={30}
+                height={100}
+              />
+              <Image
+                src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194968/home/twitter_aq1km5.svg"
+                width={30}
+                height={100}
+              />
             </div>
             <p className="text-yellow hidden sm:block">
               Copyrights - Univers Restaurant | Designed By Vivek Mashru
