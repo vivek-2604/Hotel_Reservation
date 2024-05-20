@@ -18,9 +18,9 @@ const Category = () => {
         />
         <p className="mt-2 text-lg font-medium">Fresh Product</p>
         <p className="mt-2">
-          Professional consider everyone probls small niche friendly.
+          Delight in the freshest flavors, crafted daily with the finest
+          ingredients.
         </p>
-        <p className="text-yellow mt-2">See more</p>
       </div>
       <div className="grid-cols-1 items-center text-white px-4 justify-center text-center">
         <Image
@@ -31,9 +31,9 @@ const Category = () => {
         />
         <p className="mt-2 text-lg font-medium">Skilled Chefs</p>
         <p className="mt-2">
-          Professional consider everyone probls small niche friendly.
+          Experience culinary artistry from our skilled chefs, masters of flavor
+          and innovation.
         </p>
-        <p className="text-yellow mt-2">See more</p>
       </div>
       <div className="grid-cols-1 items-center text-white px-4 justify-center text-center">
         <Image
@@ -44,9 +44,9 @@ const Category = () => {
         />
         <p className="mt-2 text-lg font-medium">Drinks & Juices</p>
         <p className="mt-2">
-          Professional consider everyone probls small niche friendly.
+          Sip on our refreshing drinks and juices, crafted to invigorate and
+          delight.
         </p>
-        <p className="text-yellow mt-2">See more</p>
       </div>
       <div className="grid-cols-1 items-center text-white px-4 justify-center text-center">
         <Image
@@ -57,9 +57,8 @@ const Category = () => {
         />
         <p className="mt-2 text-lg font-medium">Vegan Cuisine</p>
         <p className="mt-2">
-          Professional consider everyone probls small niche friendly.
+          Savor the vibrant flavors of our thoughtfully crafted vegan cuisine.
         </p>
-        <p className="text-yellow mt-2">See more</p>
       </div>
     </div>
   );
