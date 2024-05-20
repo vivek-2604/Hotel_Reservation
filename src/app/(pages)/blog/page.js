@@ -20,9 +20,10 @@ const Blog = async () => {
               Be First Who Read News
             </p>
             <p className="text-center font-normal text-base lg:px-56">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt
+              Discover the culinary journey behind our Chef's Specials and
+              cooking tips from our expert chefs in our blog section. From
+              travel adventures to foodie guides, explore diverse articles that
+              ignite wanderlust and tantalize taste buds.
             </p>
           </div>
           <div className="mt-12">

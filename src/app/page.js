@@ -6,8 +6,29 @@ import { useRouter } from "next/navigation";
 import { blogs } from "@/lib/data";
 import { menuData } from "@/lib/menuFile";
 import MenuList from "./component/MenuList/MenuList";
-
 import Reservation from "./component/ReservationForm";
+import Testimonial from "./component/Testimonial";
+
+const testimonials = [
+  {
+    comment:
+      "An unforgettable dining experience! Every dish was a masterpiece, and the ambiance was perfect. Highly recommend Nirvana Nest for anyone seeking a culinary delight.",
+    author: "Priya S.",
+    post: "Food Blogger",
+  },
+  {
+    comment:
+      "The vegan options are simply divine! It's rare to find such creativity and flavor in vegan cuisine. Nirvana Nest has truly set a new standard.",
+    author: "Arjun M.",
+    post: "Health Enthusiast",
+  },
+  {
+    comment:
+      "Exceptional service and exquisite flavors. The chef’s specials were out of this world. I can't wait to come back!",
+    author: "Rita K.",
+    post: "Frequent Diner",
+  },
+];
 
 export default function Home() {
   const router = useRouter();
@@ -25,7 +46,7 @@ export default function Home() {
           </p>
           <p className="text-lg font-normal">
             Simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy .
+            Ipsum has been the industry's standard dummy.
           </p>
           <button
             className="w-full sm:w-1/3 border-2 border-yellow p-2"
@@ -68,7 +89,7 @@ export default function Home() {
             <div>
               <p className="text-lg font-semibold">Reservation</p>
               <p className="text-sm font-medium">
-                reservationatunivers@gmail.com
+                nirvananest.restaurant@gmail.com
               </p>
             </div>
           </div>
@@ -88,25 +109,25 @@ export default function Home() {
               <div>
                 <p className="font-bold text-xl">The Story</p>
                 <p className="font-normal text-base mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Venenatis lectus magna fringilla urna. Gravida quis blandit
-                  turpis cursus in hac.
+                  "Nirvana Nest": Where serenity meets flavor, offering a
+                  culinary escape in the heart of the city. Indulge in blissful
+                  dining experiences, where every bite takes you closer to
+                  gastronomic nirvana.
                 </p>
               </div>
               <div className="flex gap-9 mt-4">
                 <div>
-                  <p className="font-bold text-xl">1996</p>
+                  <p className="font-bold text-xl">2020</p>
                   <p className="font-normal text-base mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt
+                    Navigating uncertainties, together we thrive, forging
+                    resilience in every stride.
                   </p>
                 </div>
                 <div>
-                  <p className="font-bold text-xl">2021</p>
+                  <p className="font-bold text-xl">2023</p>
                   <p className="font-normal text-base mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt
+                    Embracing growth, we soar beyond skies, crafting dreams into
+                    realities with each sunrise.
                   </p>
                 </div>
               </div>
@@ -120,10 +141,11 @@ export default function Home() {
         <div className="flex flex-col gap-10 md:gap-20 md:flex-row">
           <div className="mt-2 md:w-1/3">
             <p className="font-bold text-xl">Try Our Special Offers</p>
-            <p className="text-base font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Venenatis lectus
+            <p className="text-base font-normal mt-3">
+              Indulge in our Chef's Special: succulent grilled lobster with
+              lemon butter sauce, paired perfectly with saffron risotto. Don't
+              miss our weekday lunch deal: three courses for the price of two, a
+              culinary experience that exceeds expectations.
             </p>
             <Image
               alt=""
@@ -209,8 +231,11 @@ export default function Home() {
           <div className="text-white mt-4">
             <p className="font-bold text-xl">What our clients say</p>
             <p className="font-normal text-base mt-2">
-              What our clients say What our clients say What our clients say
+              Guests Speak, Experience Delights: A Taste of Nirvana Nest
             </p>
+          </div>
+          <div className="mt-10">
+            <Testimonial testimonials={testimonials} />
           </div>
         </div>
         <div>
@@ -234,9 +259,8 @@ export default function Home() {
               Our Special Offer Dishes
             </p>
             <p className="text-center font-normal text-base xl:px-56">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt
+              Savor more, pay less: Dive into our chef's specials with exclusive
+              discounts. Your taste of luxury awaits at Nirvana Nest.
             </p>
           </div>
           <div className="flex flex-col xl:flex-row xl:justify-between gap-5 mt-10">
@@ -261,8 +285,9 @@ export default function Home() {
                   Veg Burger
                 </p>
                 <p className="text-base font-normal mt-2 text-blue">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
+                  Sink your teeth into our Veg Burger Extravaganza: a symphony
+                  of fresh veggies and savory sauces, guaranteed to satisfy
+                  cravings.
                 </p>
               </div>
               <div className="mt-14">
@@ -296,8 +321,9 @@ export default function Home() {
                   Veg Pizza
                 </p>
                 <p className="text-base font-normal mt-2 text-blue">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor
+                  Delight in every slice with our Veg Pizza Paradise: a medley
+                  of garden-fresh toppings and gooey cheese, crafted to
+                  perfection.
                 </p>
               </div>
             </div>
@@ -312,9 +338,10 @@ export default function Home() {
               Popular Dishes
             </p>
             <p className="text-center font-normal text-base xl:px-56">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt
+              Discover culinary nirvana with our popular dishes, where every
+              bite is a journey to delight. From our aromatic Butter Chicken to
+              our mouthwatering Paneer Tikka, experience the essence of Indian
+              cuisine at its finest
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 mt-12 gap-5">
@@ -369,8 +396,9 @@ export default function Home() {
               Our Great Services
             </p>
             <p className="mt-2 text-base text-white font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt,Lorem ipsum dolor sit amet
+              Experience unparalleled hospitality at Nirvana Nest, where every
+              guest is treated like royalty. From attentive staff to
+              personalized attention.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 xl:w-2/3">
@@ -419,9 +447,7 @@ export default function Home() {
               Be First Who Read News
             </p>
             <p className="text-center font-normal text-base lg:px-56">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt,Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt
+             p
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-10 mt-12">

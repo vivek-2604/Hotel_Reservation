@@ -3,55 +3,36 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <>
-      <div className="bg-blue">
-        <div className="mx-12 pt-10 pb-5 border-t-2 md:mx-16 lg:mx-36 xl:mx-64">
-          <div className="flex justify-center">
-            <Image
-              src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194932/home/logo_xinusc.png"
-              width={100}
-              height={100}
-            />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-36 mt-10">
-            <div className="flex flex-col w-2/3 mx-auto xl:w-full">
-              <div className="border-t border-b border-white text-center text-white">
-                CONTACT
-              </div>
-              <div className="mt-6 text-white text-center">
-                Rajknda, bfducsss, asbdW,SANDcn
-              </div>
+    <div className="bg-blue">
+      <div className="mx-12 pt-10 pb-5 border-t-2 md:mx-16 lg:mx-36 xl:mx-64">
+        <div className="flex justify-center">
+          <Image
+            src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715793463/home/nirvana_final_logo_zrsvqn.svg"
+            width={110}
+            height={100}
+            alt="logo"
+            className="scale-150"
+          />
+        </div>
+        <div className="flex flex-col md:flex-row gap-20 my-20">
+          <div className="flex flex-col w-full sm:w-1/2 md:w-2/3  mx-auto xl:w-full">
+            <div className="border-t border-b border-white text-center text-white">
+              WORKING HOURS
             </div>
-            {/* <div className="hidden flex-col items-center xl:flex">
-              <p className="text-white text-center">
-                Join our mailing list for updates,
-                <br />
-                Get news & offers events.
+            <div className="mt-6 text-white text-center flex flex-col gap-6">
+              <p className="flex flex-col sm:flex-row">
+                <span className="text-yellow">Mon - Fri: </span>9:00 - 23:00
               </p>
-              <div className="flex mt-6">
-                <input
-                  className="h-10 border border-white bg-blue p-2"
-                  placeholder="Email"
-                />
-                <button className="h-10 bg-white text-blue px-3">
-                  Subscribe
-                </button>
-              </div>
-            </div> */}
-            <div className="flex flex-col w-2/3 mx-auto xl:w-full">
-              <div className="border-t border-b border-white text-center text-white">
-                WORKING HOURS
-              </div>
-              <div className="mt-6 text-white text-center">
-                <p>
-                  <span className="text-yellow">All Days: </span>9:00A.M. -
-                  11:00P.M.
-                </p>
-              </div>
+              <p className="flex flex-col sm:flex-row">
+                <span className="text-yellow">Sat - Sun: </span>7:00 - 00:00
+              </p>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-5 pt-8 md:flex-row md:justify-between">
-            <div className="flex gap-8">
+          <div className="flex flex-col w-full sm:w-1/2 md:w-2/3 mx-auto xl:w-full">
+            <div className="border-t border-b border-white text-center text-white">
+              LINKS
+            </div>
+            <div className="flex gap-8 justify-between mt-6">
               <Image
                 src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194929/home/Insta_ua2iol.svg"
                 width={30}
@@ -68,16 +49,26 @@ const Footer = () => {
                 height={100}
               />
             </div>
-            <p className="text-yellow hidden sm:block">
-              Copyrights - Univers Restaurant | Designed By Vivek Mashru
-            </p>
-            <p className="block sm:hidden text-yellow">
-              Copyrights - Univers Restaurant
-            </p>
+          </div>
+          <div className="flex flex-col w-full sm:w-1/2 md:w-2/3 mx-auto xl:w-full">
+            <div className="border-t border-b border-white text-center text-white">
+              CONTACT
+            </div>
+            <div className="mt-6 text-white text-center tracking-wide">
+              Kalavad Rd, Jala Ram Nagar, Rajkot, Gujarat 360001, India
+            </div>
           </div>
         </div>
+        <div className="flex items-center justify-center mt-10 pt-8 border-t-2 border-midnight_grey">
+          <p className="text-yellow hidden sm:block">
+            Copyrights - Univers Restaurant | Designed By Vivek Mashru
+          </p>
+          <p className="block sm:hidden text-yellow">
+            Copyrights - Univers Restaurant
+          </p>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
