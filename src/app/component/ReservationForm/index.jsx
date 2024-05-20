@@ -42,12 +42,8 @@ const Reservation = () => {
       time: "",
       date: "",
     },
-
     validationSchema: schema,
-
-    // Handle form submission
     onSubmit: async ({ name, email, person, time, date }) => {
-      console.log(name, email, person, time, date);
       setName("");
       setEmail("");
       setPerson("");
@@ -60,7 +56,7 @@ const Reservation = () => {
 
   return (
     <div>
-      <div className="bg-blue opacity-95 py-36 px-28 lg:w-1/2 lg:mx-auto">
+      <div className="bg-blue opacity-95 py-36 px-14 sm:px-28 lg:w-1/2 lg:mx-auto">
         <div className="flex flex-col justify-center items-center gap-5">
           <p className="border-y-2 border-yellow w-24 text-white text-sm font-semibold uppercase">
             Reservation
