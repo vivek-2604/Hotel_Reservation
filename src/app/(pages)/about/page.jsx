@@ -8,24 +8,21 @@ import Testimonial from "@/app/component/Testimonial";
 const About = () => {
   const testimonials = [
     {
-      quote:
-        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
-      author: "Author 1",
-      designation: "designer",
+      "comment": "An unforgettable dining experience! Every dish was a masterpiece, and the ambiance was perfect. Highly recommend Nirvana Nest for anyone seeking a culinary delight.",
+      "author": "Priya S.",
+      "post": "Food Blogger"
     },
     {
-      quote:
-        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
-      author: "Author 2",
-      designation: "designer",
+      "comment": "The vegan options are simply divine! It's rare to find such creativity and flavor in vegan cuisine. Nirvana Nest has truly set a new standard.",
+      "author": "Arjun M.",
+      "post": "Health Enthusiast"
     },
     {
-      quote:
-        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
-      author: "Author 3",
-      designation: "designer",
-    },
-  ];
+      "comment": "Exceptional service and exquisite flavors. The chef’s specials were out of this world. I can't wait to come back!",
+      "author": "Rita K.",
+      "post": "Frequent Diner"
+    }
+  ]
 
   return (
     <>
@@ -39,9 +36,12 @@ const About = () => {
           <p className="font-semibold text-xl">ABOUT US</p>
           <p className="font-normal text-4xl mt-4">Quality and Tradition</p>
           <p className="font-normal text-base mt-4">
-            Lorem Ipsum is that it has a more-or-less normal distribution of
-            letters, as opposed to using 'Content here, content gfshere making
-            look like readable English. Many desktop publishing packages.
+            Welcome to Nirvana Nest, where every meal is a journey to culinary
+            nirvana. Nestled in the heart of the city, our restaurant blends a
+            serene ambiance with exquisite cuisine, creating an unparalleled
+            dining experience. Our passionate chefs craft each dish with the
+            finest ingredients, infusing traditional flavors with innovative
+            twists.
           </p>
           <Image
             src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715191891/about%20us/name_sign_ah0x37.svg"
@@ -49,9 +49,6 @@ const About = () => {
             height={100}
             className="mt-4"
           />
-          <button className="border-2 border-yellow px-8 py-2 mt-4">
-            See More
-          </button>
         </div>
         <div className="hidden lg:block">
           <Image

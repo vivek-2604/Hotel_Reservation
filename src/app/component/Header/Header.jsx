@@ -35,12 +35,12 @@ const Header = () => {
     <div className="bg-blue text-white">
       <div className="flex px-12 py-5 border-b-2 justify-between items-center md:py-10 xl:px-64 md:px-16 lg:px-36 md:border-b-0">
         <button className="border h-10 px-2 font-medium hidden lg:block">
-          call-1234156
+          call- +91 1234156
         </button>
         <Image
-          alt=""
-          className="text-lg"
-          src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194932/home/logo_xinusc.png"
+          alt="logo"
+          className="text-lg scale-150"
+          src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715793463/home/nirvana_final_logo_zrsvqn.svg"
           width={100}
           height={100}
         />

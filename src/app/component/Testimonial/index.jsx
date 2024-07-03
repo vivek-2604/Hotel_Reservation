@@ -29,9 +29,11 @@ const Testimonial = ({ testimonials }) => {
         {testimonials.map((testimonial, index) => (
           <div key={index} className="w-full flex-shrink-0">
             <div className="bg-transparent text-white p-10 text-center shadow-md rounded-md">
-              <p className="text-lg mb-4">{testimonial.quote}</p>
+              <p className="text-lg mb-4">{testimonial.comment}</p>
               <p className="font-semibold mb-4">{testimonial.author}</p>
-              <p className="font-semibold mb-4 text-yellow">{testimonial.designation}</p>
+              <p className="font-semibold mb-4 text-yellow">
+                {testimonial.post}
+              </p>
             </div>
           </div>
         ))}
