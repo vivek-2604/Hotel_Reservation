@@ -3,11 +3,12 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { blogs } from "@/lib/data";
-import { menuData } from "@/lib/menuFile";
+import { blogs } from "@/data/data";
+import { menuData } from "@/data/menuFile";
 import MenuList from "./component/MenuList/MenuList";
 
 import Reservation from "./component/ReservationForm";
+import Testimonial from "./component/Testimonial";
 
 export default function Home() {
 

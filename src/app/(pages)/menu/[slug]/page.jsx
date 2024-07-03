@@ -1,9 +1,9 @@
-import { getSingleMenu } from "@/lib/menuFile";
+import { getSingleMenu } from "@/data/menuFile";
 import Image from "next/image";
 import React from "react";
 import Tab from "@/app/component/Tabs/Tab";
 import Review from "@/app/component/Review/Review";
-import { Reviews } from "@/lib/reviews";
+import { Reviews } from "@/data/reviews";
 
 const Description = () => (
   <div className="flex flex-col gap-5">
