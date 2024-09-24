@@ -10,25 +10,24 @@ import Reservation from "./component/ReservationForm";
 import Testimonial from "./component/Testimonial";
 
 export default function Home() {
-
   const testimonials = [
     {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 1",
-      designation: "designer"
+      designation: "designer",
     },
     {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 2",
-      designation: "designer"
+      designation: "designer",
     },
     {
       quote:
         "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
       author: "Author 3",
-      designation: "designer"
+      designation: "designer",
     },
   ];
 
@@ -227,7 +226,7 @@ export default function Home() {
       <div className="mt-14 bg-blue">
         <div className="py-24 mx-12 md:mx-16 lg:mx-36 xl:mx-64">
           <div className="border-y-2 border-yellow text-white w-28 text-center uppercase">
-          Testimonial
+            Testimonial
           </div>
           <div className="text-white mt-4">
             <p className="font-bold text-xl">What our clients say</p>
@@ -236,7 +235,7 @@ export default function Home() {
             </p>
           </div>
           <div className="pt-24">
-          <Testimonial testimonials={testimonials} />
+            <Testimonial testimonials={testimonials} />
           </div>
         </div>
         <div className="hidden sm:block">

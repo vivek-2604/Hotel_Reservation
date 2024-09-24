@@ -4,6 +4,7 @@ import React from "react";
 import Tab from "@/app/component/Tabs/Tab";
 import Review from "@/app/component/Review/Review";
 import { Reviews } from "@/data/reviews";
+import { RelatedDish } from "@/app/component/Related -Dish";
 
 const Description = () => (
   <div className="flex flex-col gap-5">
@@ -41,11 +42,11 @@ const page = async ({ params }) => {
         </div>
         <div className="w-full md:w-3/5 space-y-8">
           <div className="flex flex-col justify-start gap-5">
-            <p className="text-xl font-bold">{menu.name}</p>
-            <p className="text-lg font-semibold">$ {menu.price}</p>
+            <p className="text-xl font-bold">{menu?.name}</p>
+            <p className="text-lg font-semibold">$ {menu?.price}</p>
           </div>
           <div className="space-y-5">
-            <p className="text-base font-medium">{menu.description}</p>
+            <p className="text-base font-medium">{menu?.description}</p>
             <div className="flex gap-2">
               <input
                 type="number"
@@ -62,10 +63,10 @@ const page = async ({ params }) => {
           </div>
           <div>
             <p className="text-yellow text-base font-medium">
-              Calories: <span className="text-blue">{menu.calories}</span>
+              Calories: <span className="text-blue">{menu?.calories}</span>
             </p>
             <p className="text-yellow text-base font-medium">
-              Category: <span className="text-blue">{menu.category}</span>
+              Category: <span className="text-blue">{menu?.category}</span>
             </p>
           </div>
         </div>
@@ -73,7 +74,10 @@ const page = async ({ params }) => {
       <div className="w-full my-10">
         <Tab tabs={tabs} />
       </div>
-      <div>3</div>
+      <div className="w-full mb-10">
+        <h1 className="text-2xl font-semibold ">Related Dishes</h1>
+        <RelatedDish selectedData={menu} />
+      </div>
     </div>
   );
 };
