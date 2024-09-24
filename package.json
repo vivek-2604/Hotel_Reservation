@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.7.2",
     "cloudinary": "^2.2.0",
     "firebase": "^10.11.0",
     "formik": "^2.4.5",

@@ -3,34 +3,35 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { blogs } from "@/lib/data";
-import { menuData } from "@/lib/menuFile";
+import { blogs } from "@/data/data";
+import { menuData } from "@/data/menuFile";
 import MenuList from "./component/MenuList/MenuList";
 import Reservation from "./component/ReservationForm";
 import Testimonial from "./component/Testimonial";
 
-const testimonials = [
-  {
-    comment:
-      "An unforgettable dining experience! Every dish was a masterpiece, and the ambiance was perfect. Highly recommend Nirvana Nest for anyone seeking a culinary delight.",
-    author: "Priya S.",
-    post: "Food Blogger",
-  },
-  {
-    comment:
-      "The vegan options are simply divine! It's rare to find such creativity and flavor in vegan cuisine. Nirvana Nest has truly set a new standard.",
-    author: "Arjun M.",
-    post: "Health Enthusiast",
-  },
-  {
-    comment:
-      "Exceptional service and exquisite flavors. The chef’s specials were out of this world. I can't wait to come back!",
-    author: "Rita K.",
-    post: "Frequent Diner",
-  },
-];
-
 export default function Home() {
+
+  const testimonials = [
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 1",
+      designation: "designer"
+    },
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 2",
+      designation: "designer"
+    },
+    {
+      quote:
+        "Leverage agile frameworks to provide a robust synopsis for high level overviews Iterative approaches to corporate strategy foster collaborative thinking  further overall value proposition organicallfriendly",
+      author: "Author 3",
+      designation: "designer"
+    },
+  ];
+
   const router = useRouter();
 
   const getMenu = () => {
@@ -225,8 +226,8 @@ export default function Home() {
 
       <div className="mt-14 bg-blue">
         <div className="py-24 mx-12 md:mx-16 lg:mx-36 xl:mx-64">
-          <div className="border-y-2 border-yellow text-white w-28 text-center">
-            TESTIMONIAL
+          <div className="border-y-2 border-yellow text-white w-28 text-center uppercase">
+          Testimonial
           </div>
           <div className="text-white mt-4">
             <p className="font-bold text-xl">What our clients say</p>
@@ -234,11 +235,11 @@ export default function Home() {
               Guests Speak, Experience Delights: A Taste of Nirvana Nest
             </p>
           </div>
-          <div className="mt-10">
-            <Testimonial testimonials={testimonials} />
+          <div className="pt-24">
+          <Testimonial testimonials={testimonials} />
           </div>
         </div>
-        <div>
+        <div className="hidden sm:block">
           <Image
             alt=""
             src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715194964/home/testimonial_qpjs3u.png"

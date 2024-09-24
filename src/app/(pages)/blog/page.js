@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBlogs } from "@/lib/data";
+import { getBlogs } from "@/data/data";
 import Reservation from "@/app/component/ReservationForm";
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";

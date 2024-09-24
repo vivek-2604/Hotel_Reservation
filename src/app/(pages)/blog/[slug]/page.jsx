@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getBlog } from "@/lib/data";
+import { getBlog } from "@/data/data";
 
 const page = async ({ params }) => {
   const blog = await getBlog(params.slug);

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
 import Reservation from "@/app/component/ReservationForm";
 import { useRouter } from "next/navigation";
-import { menuData } from "@/lib/menuFile";
+import { menuData } from "@/data/menuFile";
 import MenuList from "@/app/component/MenuList/MenuList";
 
 const Menu = () => {
