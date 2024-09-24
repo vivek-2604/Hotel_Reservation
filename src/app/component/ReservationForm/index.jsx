@@ -1,7 +1,6 @@
 "use client";
 
 import { useFormik } from "formik";
-import { useState } from "react";
 import * as Yup from "yup";
 
 const schema = Yup.object().shape({
@@ -21,19 +20,13 @@ const schema = Yup.object().shape({
       "Date must be within the next two weeks"
     )
     .test("is-not-weekend", "Date cannot be a weekend", function (value) {
-      const day = value.getDay(); // 0 is Sunday, 6 is Saturday
+      const day = value.getDay();
       return day !== 0 && day !== 6;
     })
     .required("Date is required"),
 });
 
-const Reservation = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [person, setPerson] = useState("");
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
-
+const Reservation = ({ handleReservation }) => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -43,12 +36,8 @@ const Reservation = () => {
       date: "",
     },
     validationSchema: schema,
-    onSubmit: async ({ name, email, person, time, date }) => {
-      setName("");
-      setEmail("");
-      setPerson("");
-      setTime("");
-      setDate("");
+    onSubmit: (values) => {
+      handleReservation(values);
     },
   });
 
@@ -71,11 +60,8 @@ const Reservation = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                    handleChange(e);
-                  }}
+                  value={values?.name}
+                  onChange={handleChange}
                   placeholder="Name"
                   autoComplete="off"
                   className="w-full px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
@@ -89,11 +75,8 @@ const Reservation = () => {
                   type="text"
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    handleChange(e);
-                  }}
+                  value={values?.email}
+                  onChange={handleChange}
                   placeholder="Email"
                   autoComplete="off"
                   className="w-full px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
@@ -110,15 +93,11 @@ const Reservation = () => {
                     type="text"
                     id="person"
                     name="person"
-                    value={person}
-                    onChange={(e) => {
-                      setPerson(e.target.value);
-                      handleChange(e);
-                    }}
+                    value={values?.person}
+                    onChange={handleChange}
                     placeholder="Person"
                     autoComplete="off"
-                    className="
-                    px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
+                    className="px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
                   />
                   {errors.person && touched.person && (
                     <span className="text-error_red">{errors.person}</span>
@@ -130,11 +109,8 @@ const Reservation = () => {
                     type="time"
                     id="time"
                     name="time"
-                    value={time}
-                    onChange={(e) => {
-                      setTime(e.target.value);
-                      handleChange(e);
-                    }}
+                    value={values?.time}
+                    onChange={handleChange}
                     placeholder="Time"
                     autoComplete="off"
                     className="px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
@@ -156,11 +132,8 @@ const Reservation = () => {
                     id="date"
                     name="date"
                     placeholder="Date"
-                    value={date}
-                    onChange={(e) => {
-                      setDate(e.target.value);
-                      handleChange(e);
-                    }}
+                    value={values?.date}
+                    onChange={handleChange}
                     autoComplete="off"
                     className="px-2 py-1 placeholder:text-white bg-transparent border-2 border-white text-white"
                   />

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getBlogs } from "@/lib/data";
+import { getBlogs } from "@/data/data";
 import Reservation from "@/app/component/ReservationForm";
 import Image from "next/image";
 import Heading from "@/app/component/Heading/Heading";
@@ -73,7 +73,7 @@ const Blog = async () => {
           backgroundImage:
             "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
         }}
-      >
+      >T
         <Reservation />
       </div>
     </div>

@@ -38,10 +38,10 @@ const Header = () => {
           call- +91 1234156
         </button>
         <Image
-          alt="logo"
-          className="text-lg scale-150"
+          alt=""
+          className="text-lg"
           src="https://res.cloudinary.com/cloudofvivek/image/upload/v1715793463/home/nirvana_final_logo_zrsvqn.svg"
-          width={100}
+          width={150}
           height={100}
         />
         <div className="flex gap-7 items-center">
