@@ -73,7 +73,7 @@ const Blog = async () => {
           backgroundImage:
             "url('https://res.cloudinary.com/cloudofvivek/image/upload/v1715194947/home/Background_kp97eh.svg')",
         }}
-      >
+      >T
         <Reservation />
       </div>
     </div>

@@ -1,3 +1,5 @@
+"use server";
+
 import Image from "next/image";
 import Category from "@/app/component/about-us/category";
 import Chef from "@/app/component/about-us/Chef Data";
